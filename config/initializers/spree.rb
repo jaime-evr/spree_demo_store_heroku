@@ -12,3 +12,9 @@ Spree.config do |config|
 end
 
 Spree.user_class = "Spree::LegacyUser"
+
+if Rails.env.production?
+  Spree::Image.attachment_definitions[:attachment][:path] = 'spree/products/:id/:style/:basename.:extension'
+  Spree::Image.attachment_definitions[:attachment][:url] = 'spree/products/:id/:style/:basename.:extension'
+end
+

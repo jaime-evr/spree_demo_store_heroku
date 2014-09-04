@@ -10,6 +10,10 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'fog', '~> 1.22.0'
 
+group :production do
+  gem 'rails_12factor'
+end
+
 # spree extensions
 gem 'spree', :git => 'https://github.com/spree/spree.git', :branch => '2-3-stable'
 gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '2-3-stable'

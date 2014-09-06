@@ -1,4 +1,4 @@
-module API
+module Api
   class V1::AuthorizationsController < ApplicationController
     skip_before_filter :verify_authenticity_token, only: :create
 

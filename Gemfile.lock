@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/spree/spree.git
-  revision: 428b21051000af69c2cf95a1bf692a98af9a8751
+  revision: a8798d2b4d9decce582ec68a9cabea1bf8550779
   branch: 2-3-stable
   specs:
     spree (2.3.3.beta)
@@ -154,7 +154,7 @@ GEM
     devise-encryptable (0.1.2)
       devise (>= 2.1.0)
     erubis (2.7.0)
-    excon (0.37.0)
+    excon (0.39.5)
     execjs (2.2.1)
     ffaker (1.25.0)
     fog (1.22.1)
@@ -163,12 +163,13 @@ GEM
       fog-json
       ipaddress (~> 0.5)
       nokogiri (~> 1.5, >= 1.5.11)
-    fog-brightbox (0.0.2)
-      fog-core
+    fog-brightbox (0.5.0)
+      fog-core (~> 1.22)
       fog-json
-    fog-core (1.22.0)
+      inflecto
+    fog-core (1.24.0)
       builder
-      excon (~> 0.33)
+      excon (~> 0.38)
       formatador (~> 0.2)
       mime-types
       net-scp (~> 1.1)
@@ -186,6 +187,7 @@ GEM
       json (~> 1.8)
       multi_xml (>= 0.5.2)
     i18n (0.6.11)
+    inflecto (0.0.2)
     ipaddress (0.8.0)
     jbuilder (2.1.3)
       activesupport (>= 3.0.0, < 5)

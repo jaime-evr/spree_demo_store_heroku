@@ -4,7 +4,17 @@ Spree::Api::BaseController.class_eval do
 
   def user_creation_controller?
     req = request.path_parameters
-    req[:controller] === 'spree/api/users' && req[:action] == 'create'
+    controller = req[:controller]
+    action = req[:action]
+    actions_without_token[controller] == action
   end
+
+  private
+    def actions_without_token
+      {
+        'spree/api/users' => 'create',
+        'spree/api/products' => 'index'
+      }
+    end
 end
 

@@ -13,7 +13,8 @@ Spree::Api::BaseController.class_eval do
     def actions_without_token
       {
         'spree/api/users' => 'create',
-        'spree/api/products' => 'index'
+        'spree/api/products' => 'index',
+        'spree/api/orders' => 'create'
       }
     end
 end

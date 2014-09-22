@@ -22,3 +22,12 @@ end
 gem 'spree', :git => 'https://github.com/spree/spree.git', :branch => '2-3-stable'
 gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '2-3-stable'
 gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git', :branch => '2-3-stable'
+
+group :development, :test do
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'ffaker'
+  gem 'pry-rails'
+  gem 'pry-remote'
+  gem 'rspec-rails'
+end

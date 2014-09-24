@@ -74,6 +74,14 @@ GIT
     spree_gateway (2.3.0.beta)
       spree_core (~> 2.3.0)
 
+GIT
+  remote: https://github.com/ulices/spree_mobile_endpoints.git
+  revision: 4687701ced275f65f81585714cfb5906af4d8748
+  branch: 2-3-stable
+  specs:
+    spree_mobile_endpoints (2.3.2)
+      spree_core (~> 2.3.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -361,4 +369,5 @@ DEPENDENCIES
   spree!
   spree_auth_devise!
   spree_gateway!
+  spree_mobile_endpoints!
   uglifier (>= 1.3.0)

@@ -9,10 +9,5 @@ Rails.application.routes.draw do
 
   end
 
-  Spree::Core::Engine.add_routes do
-    namespace :api do
-      resources :checkouts, only: [:create], format: 'json'
-    end
-  end
 end
 

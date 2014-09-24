@@ -11,6 +11,9 @@
 /db/*.sqlite3
 /db/*.sqlite3-journal
 
+# Ignore public product images
+/public/spree/products
+
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp

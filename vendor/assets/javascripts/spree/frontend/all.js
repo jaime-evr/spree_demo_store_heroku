@@ -11,3 +11,4 @@
 
 //= require_tree .
 //= require spree/frontend/spree_mobile_endpoints
+//= require spree/frontend/spree_mail_settings

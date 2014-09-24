@@ -1,14 +1,17 @@
-# Configure Spree Preferences
-#
-# Note: Initializing preferences available within the Admin will overwrite any changes that were made through the user interface when you restart.
-#       If you would like users to be able to update a setting with the Admin it should NOT be set here.
-#
-# In order to initialize a setting do:
-# config.setting_name = 'new value'
 Spree.config do |config|
-  # Example:
-  # Uncomment to stop tracking inventory levels in the application
-  # config.track_inventory_levels = false
+  config.override_actionmailer_config = !Rails.env.test?
+  config.allow_backorder_shipping = true
+
+  if Rails.env.production?
+    config.enable_mail_delivery   = true
+    config.mail_host              = 'smtp.mandrillapp.com'
+    config.mail_domain            = 'mandrillapp.com'
+    config.mail_port              = 587
+    config.secure_connection_type = 'TLS'
+    config.mail_auth_type         = 'login'
+    config.smtp_username          = ENV['MANDRILL_USERNAME']
+    config.smtp_password          = ENV['MANDRILL_API_KEY']
+  end
 end
 
 Spree.user_class = "Spree::LegacyUser"

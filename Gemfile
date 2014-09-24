@@ -23,6 +23,7 @@ gem 'spree', :git => 'https://github.com/spree/spree.git', :branch => '2-3-stabl
 gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '2-3-stable'
 gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git', :branch => '2-3-stable'
 gem 'spree_mobile_endpoints', :git => 'https://github.com/ulices/spree_mobile_endpoints.git', :branch => '2-3-stable'
+gem 'spree_mail_settings', :git => 'https://github.com/rodolfospalenza/spree_mail_settings.git'
 
 group :development, :test do
   gem 'database_cleaner'

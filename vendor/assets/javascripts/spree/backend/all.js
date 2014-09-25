@@ -12,3 +12,4 @@
 //= require_tree .
 //= require spree/backend/spree_mobile_endpoints
 //= require spree/backend/spree_mail_settings
+//= require spree/backend/spree_food_menu

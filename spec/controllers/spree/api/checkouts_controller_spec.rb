@@ -85,7 +85,9 @@ describe Spree::Api::CheckoutsController do
           },
           line_items: [
             { variant_id: variant.id,
-              quantity: 5
+              quantity: 5,
+              delivery_type: 1,
+              delivery_time: Time.now
             }
           ],
           payments_attributes: [
@@ -116,15 +118,19 @@ describe Spree::Api::CheckoutsController do
         Spree::Order.any_instance.stub(:confirmation_required? => true)
         Spree::Order.any_instance.stub(:payment_required? => true)
         controller.stub(:try_spree_current_user).and_return user
-      end
-
-      it 'returns a valid response' do
         api_post :create,
           user_id: user.id,
           order: order_params,
           payment_source: payment_params
+      end
+
+      it 'returns a valid response' do
         json_response['state'].should == 'complete'
         response.status.should == 200
+      end
+
+      it 'scheduled order delyvery time per item' do
+        expect(Spree::Order.last.line_items.first.delivery_time).to_not be_nil
       end
     end
 

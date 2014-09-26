@@ -82,8 +82,16 @@ GIT
       spree_core (~> 2.3.0)
 
 GIT
-  remote: https://github.com/ulices/spree_mobile_endpoints.git
-  revision: 4687701ced275f65f81585714cfb5906af4d8748
+  remote: https://github.com/ulices/spree_food_menu
+  revision: d8b621a2658e1a7a7870c7c18595703de77bd1f3
+  branch: 2-3-stable
+  specs:
+    spree_food_menu (2.3.2)
+      spree_core (~> 2.3.2)
+
+GIT
+  remote: https://github.com/ulices/spree_mobile_endpoints
+  revision: 0b7f7b98d7c5a5e6fa79f8540dc62bb80a3f2ed5
   branch: 2-3-stable
   specs:
     spree_mobile_endpoints (2.3.2)
@@ -375,6 +383,7 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   spree!
   spree_auth_devise!
+  spree_food_menu!
   spree_gateway!
   spree_mail_settings!
   spree_mobile_endpoints!

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140904176099) do
+ActiveRecord::Schema.define(version: 20140925224607) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -178,8 +178,12 @@ ActiveRecord::Schema.define(version: 20140904176099) do
     t.decimal  "promo_total",          precision: 10, scale: 2, default: 0.0
     t.decimal  "included_tax_total",   precision: 10, scale: 2, default: 0.0, null: false
     t.decimal  "pre_tax_amount",       precision: 8,  scale: 2
+    t.integer  "delivery_type"
+    t.datetime "delivery_time"
   end
 
+  add_index "spree_line_items", ["delivery_time"], name: "index_spree_line_items_on_delivery_time", using: :btree
+  add_index "spree_line_items", ["delivery_type"], name: "index_spree_line_items_on_delivery_type", using: :btree
   add_index "spree_line_items", ["order_id"], name: "index_spree_line_items_on_order_id", using: :btree
   add_index "spree_line_items", ["tax_category_id"], name: "index_spree_line_items_on_tax_category_id", using: :btree
   add_index "spree_line_items", ["variant_id"], name: "index_spree_line_items_on_variant_id", using: :btree
@@ -193,6 +197,28 @@ ActiveRecord::Schema.define(version: 20140904176099) do
   end
 
   add_index "spree_log_entries", ["source_id", "source_type"], name: "index_spree_log_entries_on_source_id_and_source_type", using: :btree
+
+  create_table "spree_menu_product_days", force: true do |t|
+    t.integer  "menu_id"
+    t.date     "day"
+    t.string   "product_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "spree_menu_product_days", ["day"], name: "index_spree_menu_product_days_on_day", using: :btree
+  add_index "spree_menu_product_days", ["menu_id"], name: "index_spree_menu_product_days_on_menu_id", using: :btree
+  add_index "spree_menu_product_days", ["product_id"], name: "index_spree_menu_product_days_on_product_id", using: :btree
+
+  create_table "spree_menus", force: true do |t|
+    t.integer  "version"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "spree_menus", ["version"], name: "index_spree_menus_on_version", using: :btree
 
   create_table "spree_option_types", force: true do |t|
     t.string   "name",         limit: 100

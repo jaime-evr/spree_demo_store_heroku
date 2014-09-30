@@ -83,7 +83,7 @@ GIT
 
 GIT
   remote: https://github.com/ulices/spree_food_menu
-  revision: d8b621a2658e1a7a7870c7c18595703de77bd1f3
+  revision: 93e7ee1e4ee9152a6dcd66c09e6dba0c741059e7
   branch: 2-3-stable
   specs:
     spree_food_menu (2.3.2)
@@ -91,7 +91,7 @@ GIT
 
 GIT
   remote: https://github.com/ulices/spree_mobile_endpoints
-  revision: 0b7f7b98d7c5a5e6fa79f8540dc62bb80a3f2ed5
+  revision: 0873f4993a7f586cf2b862dd6b626a6424d74a80
   branch: 2-3-stable
   specs:
     spree_mobile_endpoints (2.3.2)

@@ -19,8 +19,4 @@ test:
   timeout: 5000
 
 production:
-  <<: *server
-  adapter: postgresql
-  database: db/spree_demo_store_production
-  pool: 5
-  timeout: 5000
+  url: <%= ENV['DATABASE_URL'] %>

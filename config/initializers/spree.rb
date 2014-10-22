@@ -15,7 +15,7 @@ Spree.user_class = "Spree::LegacyUser"
 
 Spree::Api::Config[:requires_authentication] = false
 
-if Rails.env.production?
+if Rails.env.production? || Rails.env.staging?
   Spree::Image.attachment_definitions[:attachment][:path] = 'spree/products/:id/:style/:basename.:extension'
   Spree::Image.attachment_definitions[:attachment][:url] = 'spree/products/:id/:style/:basename.:extension'
 end

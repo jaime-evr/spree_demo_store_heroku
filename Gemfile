@@ -14,7 +14,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'fog', '~> 1.22.0'
 gem 'pry'
 
-group :production do
+group :production, :staging do
   gem 'rails_12factor'
 end
 

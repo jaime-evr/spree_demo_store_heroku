@@ -18,5 +18,8 @@ test:
   pool: 5
   timeout: 5000
 
+staging:
+  url: <%= ENV['DATABASE_URL'] %>
+
 production:
   url: <%= ENV['DATABASE_URL'] %>

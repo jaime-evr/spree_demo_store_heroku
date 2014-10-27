@@ -83,7 +83,7 @@ GIT
 
 GIT
   remote: https://github.com/ulices/spree_food_menu
-  revision: b2d80eec137314c1d733a76c58e47873d89b67ec
+  revision: 067c7209348de0150add160f89792cc3978cb40a
   branch: 2-3-stable
   specs:
     spree_food_menu (2.3.2)
@@ -148,6 +148,7 @@ GEM
       uuidtools (~> 2.1)
     bcrypt (3.1.7)
     builder (3.2.2)
+    callsite (0.0.11)
     cancan (1.6.10)
     cancancan (1.8.4)
     canonical-rails (0.0.7)
@@ -166,9 +167,10 @@ GEM
     coffee-script-source (1.8.0)
     colorize (0.7.3)
     database_cleaner (1.2.0)
-    deface (1.0.0)
+    deface (1.0.1)
       colorize (>= 0.5.8)
       nokogiri (~> 1.6.0)
+      polyglot
       rails (>= 3.1)
     devise (3.2.4)
       bcrypt (~> 3.0)
@@ -235,14 +237,18 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    meta_request (0.3.4)
+      callsite (~> 0.0, >= 0.0.11)
+      rack-contrib (~> 1.1)
+      railties (>= 3.0.0, < 5.0.0)
     method_source (0.8.2)
     mime-types (1.25.1)
     mini_portile (0.6.0)
-    minitest (5.4.1)
-    monetize (0.3.0)
-      money (~> 6.1.0.beta1)
-    money (6.1.1)
-      i18n (~> 0.6.4)
+    minitest (5.4.2)
+    monetize (0.4.1)
+      money (~> 6.2.1)
+    money (6.2.1)
+      i18n (>= 0.6.4, <= 0.7.0.dev)
     multi_json (1.10.1)
     multi_xml (0.5.5)
     net-scp (1.2.1)
@@ -274,6 +280,8 @@ GEM
     rabl (0.9.4.pre1)
       activesupport (>= 2.3.14)
     rack (1.5.2)
+    rack-contrib (1.1.0)
+      rack (>= 0.9.1)
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.1.5)
@@ -334,10 +342,10 @@ GEM
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    sprockets-rails (2.1.4)
+    sprockets-rails (2.2.0)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
-      sprockets (~> 2.8)
+      sprockets (>= 2.8, < 4.0)
     state_machine (1.2.0)
     stringex (1.5.1)
     thor (0.19.1)
@@ -372,6 +380,7 @@ DEPENDENCIES
   fog (~> 1.22.0)
   jbuilder (~> 2.0)
   jquery-rails
+  meta_request
   pg
   pry
   pry-rails

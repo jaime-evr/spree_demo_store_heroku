@@ -33,4 +33,5 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-remote'
   gem 'rspec-rails'
+  gem 'meta_request'
 end

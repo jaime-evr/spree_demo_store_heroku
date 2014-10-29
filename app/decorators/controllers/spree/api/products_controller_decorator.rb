@@ -15,6 +15,7 @@ Spree::Api::ProductsController.class_eval do
     if @product.persisted?
       create_stock_movement if stock_param.present?
       save_product_images if images_params.present?
+      create_product_to_menu if menu_param.present?
       respond_with(@product, :status => 201, :default_template => :show)
     else
       invalid_resource!(@product)
@@ -63,11 +64,24 @@ Spree::Api::ProductsController.class_eval do
     end
   end
 
+  def create_product_to_menu
+    menu_id = menu_param.to_i
+    Spree::MenuProductDay.create({
+                                     menu_id:    menu_id,
+                                     product_id: @product.id,
+                                     day:        Date.today
+                                 }) if menu_id > 0
+  end
+
   def stock_param
     params[:product][:stock]
   end
 
   def images_params
     params[:product][:images]
+  end
+
+  def menu_param
+    params[:product][:menu_id]
   end
 end

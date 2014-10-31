@@ -83,7 +83,7 @@ GIT
 
 GIT
   remote: https://github.com/ulices/spree_food_menu
-  revision: 894561bb28f4a532e8439fca9e839bf81386bb2e
+  revision: 37f4eb7b772a3de797c936e9ed1358ed00daa585
   branch: 2-3-stable
   specs:
     spree_food_menu (2.3.2)
@@ -245,10 +245,10 @@ GEM
     mime-types (1.25.1)
     mini_portile (0.6.0)
     minitest (5.4.2)
-    monetize (0.4.1)
-      money (~> 6.2.1)
-    money (6.2.1)
-      i18n (>= 0.6.4, <= 0.7.0.dev)
+    monetize (1.0.0)
+      money (~> 6.4.0)
+    money (6.4.0)
+      i18n (>= 0.6.4, <= 0.7.0.beta1)
     multi_json (1.10.1)
     multi_xml (0.5.5)
     net-scp (1.2.1)

@@ -1,5 +1,5 @@
 cache [I18n.locale, root_object]
-attributes :id, :number, :email, :state
+attributes :id, :number, :email, :state, :created_at, :updated_at
 
 child(products: :products) do
   extends "spree/api/products/show"

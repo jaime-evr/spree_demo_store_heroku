@@ -125,8 +125,8 @@ describe Spree::Api::CheckoutsController do
       end
 
       it 'returns a valid response' do
-        json_response['state'].should == 'complete'
-        response.status.should == 200
+        expect(json_response['state']).to eql 'confirm'
+        expect(response.status).to eql 200
       end
 
       it 'scheduled order delyvery time per item' do

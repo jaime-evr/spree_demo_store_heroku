@@ -7,6 +7,12 @@ Rails.application.routes.draw do
       resource :authorizations, only: :create
     end
 
+    resources :orders do
+      member do
+        put 'next_step'
+      end
+    end
+
   end
 
 end

@@ -91,7 +91,7 @@ GIT
 
 GIT
   remote: https://github.com/ulices/spree_mobile_endpoints
-  revision: 0873f4993a7f586cf2b862dd6b626a6424d74a80
+  revision: f899cc3ee0183683539f124a617b68f62cb9d3ee
   branch: 2-3-stable
   specs:
     spree_mobile_endpoints (2.3.2)

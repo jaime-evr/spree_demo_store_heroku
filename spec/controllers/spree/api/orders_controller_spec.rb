@@ -44,7 +44,6 @@ describe Spree::Api::OrdersController do
           {
               id:    order.number,
               order: {
-                  state:   'complete',
                   user_id: user.id
               }
           }

@@ -6,13 +6,16 @@ Rails.application.routes.draw do
     namespace :v1 do
       resource :authorizations, only: :create
     end
+  end
 
-    resources :orders do
-      member do
-        put 'next_state'
+  Spree::Core::Engine.add_routes do
+    namespace :api do
+      resources :orders do
+        member do
+          put 'next_state'
+        end
       end
     end
-
   end
 
 end

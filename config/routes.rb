@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
     resources :orders do
       member do
-        put 'next_step'
+        put 'next_state'
       end
     end
 

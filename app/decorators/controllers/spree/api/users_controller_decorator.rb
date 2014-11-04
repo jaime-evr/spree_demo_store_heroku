@@ -17,7 +17,7 @@ Spree::Api::UsersController.class_eval do
   end
 
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation)
+    params.require(:user).permit(:email, :password, :password_confirmation, :channel, :image_url)
   end
 
   def create_admin_role

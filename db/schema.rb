@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140925224607) do
+ActiveRecord::Schema.define(version: 20141104162139) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -846,6 +846,8 @@ ActiveRecord::Schema.define(version: 20140925224607) do
     t.datetime "updated_at"
     t.string   "spree_api_key",          limit: 48
     t.datetime "remember_created_at"
+    t.string   "image_url"
+    t.string   "channel"
   end
 
   add_index "spree_users", ["email"], name: "email_idx_unique", unique: true, using: :btree

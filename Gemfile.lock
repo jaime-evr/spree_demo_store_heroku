@@ -83,7 +83,7 @@ GIT
 
 GIT
   remote: https://github.com/ulices/spree_food_menu
-  revision: 4ea9e07f72f9d90e003f6d524b2ae02fd2c9a4ed
+  revision: a7f11632dc582c4e4aaa9974990ee7ef2832a61f
   branch: 2-3-stable
   specs:
     spree_food_menu (2.3.2)
@@ -216,7 +216,7 @@ GEM
       activerecord (>= 4.0.0)
     highline (1.6.21)
     hike (1.2.3)
-    httparty (0.13.1)
+    httparty (0.13.2)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
     i18n (0.6.11)
@@ -243,7 +243,7 @@ GEM
       railties (>= 3.0.0, < 5.0.0)
     method_source (0.8.2)
     mime-types (1.25.1)
-    mini_portile (0.6.0)
+    mini_portile (0.6.1)
     minitest (5.4.2)
     monetize (1.0.0)
       money (~> 6.4.0)
@@ -254,8 +254,8 @@ GEM
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.1)
-    nokogiri (1.6.3.1)
-      mini_portile (= 0.6.0)
+    nokogiri (1.6.4)
+      mini_portile (~> 0.6.0)
     orm_adapter (0.5.0)
     paperclip (4.2.0)
       activemodel (>= 3.0.0)

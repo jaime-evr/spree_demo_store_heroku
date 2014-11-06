@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resource :authorizations, only: :create
+      get 'current_time', to: 'current_time#index'
     end
   end
 

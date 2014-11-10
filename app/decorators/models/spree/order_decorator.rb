@@ -6,6 +6,6 @@ Spree::Order.class_eval do
 
   private
     def on_cancelable_step?
-      completed? || confirm?
+      complete? || confirm?
     end
 end

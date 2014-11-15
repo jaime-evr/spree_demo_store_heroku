@@ -1,4 +1,4 @@
-window.App = angular.module('Breakfasts', ['templates', 'ngRoute']);
+window.App = angular.module('Breakfasts', ['templates', 'ngResource', 'ngRoute']);
 
 App.config(function($httpProvider, $routeProvider) {
   $routeProvider.when('/', {

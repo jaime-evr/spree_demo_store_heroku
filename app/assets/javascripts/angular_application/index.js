@@ -4,4 +4,3 @@
 //= require angular-route
 //= require angular_application/breakfasts
 //= require_tree .
-

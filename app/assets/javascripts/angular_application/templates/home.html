@@ -1,0 +1,9 @@
+<div>
+  <div ng-repeat="category in categories" ng-init="categoryProducts=renderCategoryProducts(category.id)">
+    {{category.name}}
+    <div ng-repeat="product in categoryProducts">
+      {{product.name}}
+    </div>
+  </div>
+</div>
+

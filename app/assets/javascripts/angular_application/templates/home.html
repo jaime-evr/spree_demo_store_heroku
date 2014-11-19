@@ -1,9 +1,9 @@
-<div>
+<section id="products-list">
   <div ng-repeat="category in categories" ng-init="categoryProducts=renderCategoryProducts(category.id)">
     {{category.name}}
     <div ng-repeat="product in categoryProducts">
-      {{product.name}}
+      <img ng-src="{{product.master.images[0].product_url}}" />
     </div>
   </div>
-</div>
+</section>
 

@@ -6,7 +6,6 @@ App.controller('HomeCtrl', ['$scope', '$routeParams', 'Product',
     });
 
     $scope.renderCategoryProducts = function(categoryId) {
-
       var categoryProducts = [];
 
       $scope.products.forEach(function(product) {
@@ -27,3 +26,4 @@ App.controller('HomeCtrl', ['$scope', '$routeParams', 'Product',
     }
   }
 ]);
+

@@ -45,13 +45,16 @@ App.controller('AuthenticationsCtrl', ['$scope', '$routeParams', '$location', '$
       });
 
       user.$save(function(response) {
-        $window.sessionStorage.token = response.user.spree_api_key;
-        $location.path('/home');
+        if(response.error) {
+          $scope.registerUser(userParams);
+        } else {
+          $window.sessionStorage.token = response.user.spree_api_key;
+          $location.path('/home');
+        }
       }, function(error) {
         $scope.registerUser(userParams);
       });
-
-    }
+    };
 
     $scope.registerUser = function(userParams) {
       user = new CreateUser({

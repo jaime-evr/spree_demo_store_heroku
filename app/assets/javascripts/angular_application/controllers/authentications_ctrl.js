@@ -1,5 +1,5 @@
-App.controller('AuthenticationsCtrl', ['$scope', '$routeParams', '$location', 'CreateUser', 'AuthenticateUser',
-  function($scope, $routeParams, $location, CreateUser, AuthenticateUser) {
+App.controller('AuthenticationsCtrl', ['$scope', '$routeParams', '$location', '$window', 'CreateUser', 'AuthenticateUser',
+  function($scope, $routeParams, $location, $window, CreateUser, AuthenticateUser) {
     $scope.signedIn = false;
 
     $scope.processAuth = function(authResult) {
@@ -45,12 +45,12 @@ App.controller('AuthenticationsCtrl', ['$scope', '$routeParams', '$location', 'C
       });
 
       user.$save(function(response) {
-        console.log('Authenticated successfully')
+        $window.sessionStorage.token = response.user.spree_api_key;
+        $location.path('/home');
       }, function(error) {
         $scope.registerUser(userParams);
       });
 
-      $location.path('/home');
     }
 
     $scope.registerUser = function(userParams) {
@@ -59,9 +59,10 @@ App.controller('AuthenticationsCtrl', ['$scope', '$routeParams', '$location', 'C
       });
 
       user.$save(function(response) {
-        console.log('User registered');
+        $window.sessionStorage.token = response.spree_api_key;
+        $location.path('/home');
       }, function(error) {
-        console.log('There was an error while creating the user');
+        delete $window.sessionStorage.token
         $location.path('login');
       });
     };
@@ -84,6 +85,7 @@ App.controller('AuthenticationsCtrl', ['$scope', '$routeParams', '$location', 'C
 
     $scope.logOut = function() {
       gapi.auth.signOut();
+      delete $window.sessionStorage.token
       $scope.signedIn = false;
     };
   }

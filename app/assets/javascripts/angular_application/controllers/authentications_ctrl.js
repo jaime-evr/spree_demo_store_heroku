@@ -48,7 +48,7 @@ App.controller('AuthenticationsCtrl', ['$scope', '$routeParams', '$location', '$
         if(response.error) {
           $scope.registerUser(userParams);
         } else {
-          $window.sessionStorage.token = response.user.spree_api_key;
+          $window.sessionStorage.setItem('user', JSON.stringify(response.user));
           $location.path('/home');
         }
       }, function(error) {
@@ -62,7 +62,7 @@ App.controller('AuthenticationsCtrl', ['$scope', '$routeParams', '$location', '$
       });
 
       user.$save(function(response) {
-        $window.sessionStorage.token = response.spree_api_key;
+        $window.sessionStorage.setItem('user', JSON.stringify(response));
         $location.path('/home');
       }, function(error) {
         delete $window.sessionStorage.token
@@ -84,12 +84,6 @@ App.controller('AuthenticationsCtrl', ['$scope', '$routeParams', '$location', '$
           'callback': $scope.userInfoCallback
         }
       );
-    };
-
-    $scope.logOut = function() {
-      gapi.auth.signOut();
-      delete $window.sessionStorage.token
-      $scope.signedIn = false;
     };
   }
 ]);

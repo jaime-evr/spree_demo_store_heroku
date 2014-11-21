@@ -1,13 +1,15 @@
+<button ng-click="logOut()">Log Out</button>
 <section id="products-list">
   <div ng-repeat="category in categories" ng-init="categoryProducts=renderCategoryProducts(category.id)">
     {{category.name}}
     <div ng-repeat="product in categoryProducts">
       <img ng-src="{{product.master.images[0].product_url}}" />
-      <button ng-click="addToCart()">Add to cart</button>
+      <button ng-click="addToCart(product.master)">Add to cart</button>
     </div>
   </div>
   <div>
     {{order.number}}
   </div>
 </section>
+<button ng-click="place()">Place Order</button>
 

@@ -1,5 +1,5 @@
-App.controller('HomeCtrl', ['$scope', '$routeParams', 'Product',
-  function($scope, $routeParams, Product) {
+App.controller('HomeCtrl', ['$scope', 'Checkout', 'Product',
+  function($scope, Checkout, Product) {
     Product.query(function(data) {
       $scope.categories = data.categories;
       $scope.products = data[todayDate()];
@@ -15,6 +15,15 @@ App.controller('HomeCtrl', ['$scope', '$routeParams', 'Product',
       });
 
       return categoryProducts;
+    };
+
+    $scope.addToCart = function() {
+      if(typeof $scope.order === 'undefined') {
+        checkout = new Checkout();
+        checkout.$save(function(order) {
+          $scope.order = order;
+        });
+      }
     };
 
     var todayDate = function() {

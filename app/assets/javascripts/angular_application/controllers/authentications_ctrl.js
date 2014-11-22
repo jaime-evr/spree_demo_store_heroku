@@ -5,7 +5,6 @@ App.controller('AuthenticationsCtrl', ['$scope', '$routeParams', '$location', '$
     $scope.processAuth = function(authResult) {
       if(authResult['access_token']) {
         $scope.signedIn = true;
-
         $scope.getUserInfo();
       } else if(authResult['error']) {
         $scope.signedIn = false;

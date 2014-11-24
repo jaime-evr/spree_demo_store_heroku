@@ -42,7 +42,8 @@ App.controller('HomeCtrl', ['$scope', '$window', '$location', 'Checkout', 'Produ
     $scope.addToCart = function(product) {
       item = {
         variant_id: product.master.id,
-        quantity: 1
+        quantity: 1,
+        delivery_time: "10",
       }
       product.inCart = true;
       $scope.lineItems.push(item);

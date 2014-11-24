@@ -56,8 +56,27 @@ App.controller('AuthenticationsCtrl', ['$scope', '$routeParams', '$location', '$
     };
 
     $scope.registerUser = function(userParams) {
+      var address = {
+        first_name: 'Test',
+        last_name: 'User',
+        address1: 'Unit 1',
+        address2: '1 Test Lane',
+        country_id: 49,
+        state_id: 32,
+        city: 'Bethesda',
+        zipcode: '20814',
+        phone: '(555) 555-5555'
+      }
+
+      var user = {
+        email: userParams.email,
+        password: userParams.password,
+        ship_address_attributes: address,
+        bill_address_attributes: address
+      }
+
       user = new CreateUser({
-        user: userParams
+        user: user
       });
 
       user.$save(function(response) {

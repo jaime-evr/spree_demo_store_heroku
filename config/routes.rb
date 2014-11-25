@@ -15,6 +15,9 @@ Rails.application.routes.draw do
         member do
           put 'next_state'
         end
+        collection do
+          get 'mine'
+        end
       end
     end
   end

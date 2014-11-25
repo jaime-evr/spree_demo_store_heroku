@@ -10,6 +10,9 @@ App.config(['$httpProvider', '$routeProvider',
     }).when('/home', {
       templateUrl: 'angular_application/templates/home.html',
       controller: 'HomeCtrl'
+    }).when('/orders', {
+      templateUrl: 'angular_application/templates/orders.html',
+      controller: 'OrdersCtrl'
     }).otherwise({
       redirectTo: '/login'
     });

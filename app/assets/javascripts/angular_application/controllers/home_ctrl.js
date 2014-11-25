@@ -37,7 +37,11 @@ App.controller('HomeCtrl', ['$scope', '$window', '$location', 'Checkout', 'Produ
       });
 
       checkout.$save(function(order) {
-        $scope.order = order;
+        if(order.errors) {
+          console.log(order.errors);
+        } else {
+          $location.path('/orders');
+        }
       });
     }
 

@@ -1,0 +1,10 @@
+<h2>My orders</h2>
+<div ng-repeat="order in orders">
+  {{order.number}}
+  <ul>
+    <li ng-repeat="item in order.line_items">
+      <span>{{item.variant.name}}</span>
+    </li>
+  </ul>
+</div>
+

@@ -10,11 +10,13 @@ App.controller('HomeCtrl', ['$scope', '$window', '$location', 'Checkout', 'Produ
     $scope.renderCategoryProducts = function(category) {
       var categoryProducts = [];
       var now = new Date().getHours();
-      if (now >= 7 && now <= 12) {
+
+      if (now <= 7 && now >= 10) {
         if (category.name == "Cafe" || category.name == "Desayuno") {
           return category.isHidden = true;
         }
       }
+
       $scope.products.forEach(function(product) {
         if(product.taxon_ids.indexOf(category.id) > -1) {
           categoryProducts.push(product);

@@ -24,10 +24,12 @@ App.controller('AuthenticationsCtrl', ['$scope', '$routeParams', '$location', '$
     };
 
     $scope.processUserInfo = function(userInfo) {
+
       $scope.$apply(function() {
         userParams = {
           email: userInfo.emails[0].value,
-          password: userInfo.id
+          password: userInfo.id,
+          image_url: userInfo.image.url
         }
 
         user = new AuthenticateUser({
@@ -49,10 +51,10 @@ App.controller('AuthenticationsCtrl', ['$scope', '$routeParams', '$location', '$
 
     $scope.registerUser = function(userParams) {
       var address = {
-        first_name: 'Test',
+        first_name: 'Admin',
         last_name: 'User',
-        address1: 'Unit 1',
-        address2: '1 Test Lane',
+        address1: 'main st',
+        address2: 'second st',
         country_id: 49,
         state_id: 32,
         city: 'Bethesda',
@@ -63,6 +65,7 @@ App.controller('AuthenticationsCtrl', ['$scope', '$routeParams', '$location', '$
       var user = {
         email: userParams.email,
         password: userParams.password,
+        image_url: userParams.image_url,
         ship_address_attributes: address,
         bill_address_attributes: address
       }
@@ -72,8 +75,12 @@ App.controller('AuthenticationsCtrl', ['$scope', '$routeParams', '$location', '$
       });
 
       user.$save(function(response) {
-        $window.sessionStorage.setItem('user', JSON.stringify(response));
-        $location.path('/home');
+        if(response.error) {
+          console.log(response.errors);
+        } else {
+          $window.sessionStorage.setItem('user', JSON.stringify(response));
+          $location.path('/home');
+        }
       }, function(error) {
         delete $window.sessionStorage.token
         $location.path('login');

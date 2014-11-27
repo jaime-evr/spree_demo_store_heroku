@@ -1,0 +1,16 @@
+.button {
+  cursor: pointer;
+  height: 40px;
+  margin: 0 auto;
+  padding-top: 10px;
+  text-align: center;
+  width: 280px;
+  @include border-radius(5px);
+}
+
+.google-login {
+  background: white url('google_logo_01.svg') no-repeat 160px 12px;
+  color: $darkTurquoise;
+  font-size: 20px;
+}
+

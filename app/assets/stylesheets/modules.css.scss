@@ -8,9 +8,25 @@
   @include border-radius(5px);
 }
 
+.category-header {
+  background: gray image-url('pattern_01.png') repeat-x;
+  color: white;
+  height: 35px;
+  padding: 10px 20px 0;
+
+  .category-title {
+    font-size: 18px;
+  }
+
+  .items-counter {
+    float: right;
+    font-size: 15px;
+  }
+}
+
 .google-login {
   background: white image-url('google_logo_01.svg') no-repeat 160px 12px;
-  color: $darkTurquoise;
+  color: $dark-turquoise;
   font-size: 20px;
   margin-top: 40px;
 }

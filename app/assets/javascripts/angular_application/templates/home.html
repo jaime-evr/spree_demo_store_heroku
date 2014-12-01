@@ -5,18 +5,22 @@
 <section id="products-list">
   <div ng-repeat="category in categories" ng-hide="category.isHidden" ng-init="categoryProducts=renderCategoryProducts(category)">
     <div class="category-header">
-      <span class="category-title">{{category.name}}</span>
+      <h1 class="category-title">{{category.name}}</h1>
       <span class="items-counter">products</span>
     </div>
 
-    <div class="product-box" ng-repeat="product in categoryProducts">
+    <div class="product-box l-center" ng-repeat="product in categoryProducts">
       <img ng-src="{{product.master.images[0].product_url}}" />
-      <button ng-hide="product.inCart" ng-click="addToCart(product)">Add to cart</button>
 
-      <div ng-show="product.inCart">
-        <button ng-click="removeQuantity(product)">remove</button>
-        <button ng-click="addQuantity(product.id)">add</button>
+      <div class="add-box l-overlap-box l-center">
+        <h2>{{product.master.name}}</h2>
       </div>
+      <span class="product-button add-button l-overlap-button l-center" ng-hide="product.inCart" ng-click="addToCart(product)">+</span>
+      <div class="add-remove-controls l-overlap-button" ng-show="product.inCart">
+        <span class="product-button quantity-remove" ng-click="removeQuantity(product)">-</span>
+        <span class="product-button quantity-add" ng-click="addQuantity(product.id)">+</span>
+      </div>
+
     </div>
   </div>
 </section>

@@ -15,6 +15,7 @@
   padding: 10px 20px 0;
 
   .category-title {
+    display: inline;
     font-size: 18px;
   }
 
@@ -22,6 +23,52 @@
     float: right;
     font-size: 15px;
   }
+}
+
+.add-box {
+  background-color: white;
+  height: 75px;
+  opacity: 0.8;
+  padding-top: 3px;
+  text-align: center;
+  width: 280px;
+  @include border-radius(5px);
+}
+
+.add-button {
+  background-color: $dark-turquoise;
+  color: white;
+  display: block;
+  width: 274px;
+}
+
+.product-button {
+  cursor: pointer;
+  font-size: 50px;
+  height: 45px;
+  line-height: 38px;
+  line-height: 38px;
+  text-align: center;
+  @include border-radius(5px);
+}
+
+.quantity-add {
+  background-color: $dark-turquoise;
+  color: white;
+  display: inline-block;
+  width: 191px;
+}
+
+.quantity-remove {
+  background-color: #AAA;
+  color: white;
+  display: inline-block;
+  width: 70px;
+  margin: 0 10px 0 23px;
+}
+
+.product-box {
+  width: 320px;
 }
 
 .google-login {

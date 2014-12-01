@@ -7,3 +7,24 @@
   margin: 20px 0;
 }
 
+.l-center {
+  margin: 0 auto;
+}
+
+.l-overlap-box {
+  margin-bottom: -78px;
+  position: relative;
+  top: -98px;
+
+  h2 {
+    color: $dark-gray;
+    font-size: 16px;
+  }
+}
+
+.l-overlap-button {
+  margin-bottom: -48px;
+  position: relative;
+  top: -68px;
+}
+

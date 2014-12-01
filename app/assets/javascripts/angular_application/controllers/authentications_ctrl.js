@@ -24,12 +24,13 @@ App.controller('AuthenticationsCtrl', ['$scope', '$routeParams', '$location', '$
     };
 
     $scope.processUserInfo = function(userInfo) {
-
       $scope.$apply(function() {
         userParams = {
           email: userInfo.emails[0].value,
           password: userInfo.etag,
-          image_url: userInfo.image.url
+          image_url: userInfo.image.url,
+          firstname: userInfo.name.givenName,
+          lastname: userInfo.name.familyName
         }
 
         user = new AuthenticateUser({
@@ -51,8 +52,8 @@ App.controller('AuthenticationsCtrl', ['$scope', '$routeParams', '$location', '$
 
     $scope.registerUser = function(userParams) {
       var address = {
-        first_name: 'Admin',
-        last_name: 'User',
+        first_name: userParams.firstname,
+        last_name: userParams.lastname,
         address1: 'main st',
         address2: 'second st',
         country_id: 49,

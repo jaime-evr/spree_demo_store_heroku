@@ -10,12 +10,18 @@
     </div>
 
     <div class="product-box l-center" ng-repeat="product in categoryProducts">
+      <div class="counter-box l-overlap-counter" ng-show="product.inCart">
+        <span class="count">{{lineItems[product.id].quantity}}</span>
+        <span>Selected</span>
+      </div>
       <img ng-src="{{product.master.images[0].product_url}}" />
 
       <div class="add-box l-overlap-box l-center">
         <h2>{{product.master.name}}</h2>
       </div>
+
       <span class="product-button add-button l-overlap-button l-center" ng-hide="product.inCart" ng-click="addToCart(product)">+</span>
+
       <div class="add-remove-controls l-overlap-button" ng-show="product.inCart">
         <span class="product-button quantity-remove" ng-click="removeQuantity(product)">-</span>
         <span class="product-button quantity-add" ng-click="addQuantity(product.id)">+</span>

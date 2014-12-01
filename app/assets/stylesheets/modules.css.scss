@@ -33,6 +33,11 @@
   text-align: center;
   width: 280px;
   @include border-radius(5px);
+
+  h2 {
+    color: $dark-gray;
+    font-size: 16px;
+  }
 }
 
 .add-button {
@@ -68,6 +73,8 @@
 }
 
 .product-box {
+  border-bottom: 3px solid $gray94;
+  overflow: hidden;
   width: 320px;
 }
 
@@ -76,5 +83,26 @@
   color: $dark-turquoise;
   font-size: 20px;
   margin-top: 40px;
+}
+
+.counter-box {
+  background: url(/assets/badge.svg) no-repeat;
+  color: white;
+  display: block;
+  height: 60px;
+  text-align: center;
+  width: 60px;
+
+  span {
+    display: block;
+    font-size: 10px;
+    font-weight: 400;
+  }
+
+  .count {
+    font-size: 20px;
+    margin-top: 8px;
+    height: 25px;
+  }
 }
 

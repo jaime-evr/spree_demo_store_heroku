@@ -15,11 +15,6 @@
   margin-bottom: -78px;
   position: relative;
   top: -98px;
-
-  h2 {
-    color: $dark-gray;
-    font-size: 16px;
-  }
 }
 
 .l-overlap-button {
@@ -28,3 +23,10 @@
   top: -68px;
 }
 
+.l-overlap-counter {
+  float: right;
+  margin-top: -60px;
+  position: relative;
+  right: 15px;
+  top: 75px;
+}

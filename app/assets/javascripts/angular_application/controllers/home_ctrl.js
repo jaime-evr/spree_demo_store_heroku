@@ -1,6 +1,6 @@
 App.controller('HomeCtrl', ['$scope', '$window', '$location', 'Checkout', 'Product',
   function($scope, $window, $location, Checkout, Product) {
-    $scope.lineItems = [];
+    $scope.lineItems = {};
 
     Product.query(function(data) {
       $scope.categories = data.categories;
@@ -28,11 +28,16 @@ App.controller('HomeCtrl', ['$scope', '$window', '$location', 'Checkout', 'Produ
 
     $scope.placeOrder = function() {
       var user = JSON.parse($window.sessionStorage.getItem('user'));
+      var items = [];
+
+      for(var key in $scope.lineItems) {
+        items.push($scope.lineItems[key]);
+      }
 
       var checkout = new Checkout({
         user_id: user.id,
         order: {
-          line_items: $scope.lineItems
+          line_items: items
         }
       });
 
@@ -46,13 +51,27 @@ App.controller('HomeCtrl', ['$scope', '$window', '$location', 'Checkout', 'Produ
     }
 
     $scope.addToCart = function(product) {
-      item = {
+      $scope.lineItems[product.id] = {
         variant_id: product.master.id,
         quantity: 1,
         delivery_time: "10",
       }
       product.inCart = true;
-      $scope.lineItems.push(item);
+    };
+
+    $scope.addQuantity = function(id) {
+      if (confirm("Are you sure?")) {
+        $scope.lineItems[id].quantity++;
+      }
+    };
+
+    $scope.removeQuantity = function(product) {
+      if ($scope.lineItems[product.id].quantity == 1) {
+        delete $scope.lineItems[product.id];
+        product.inCart = false;
+      } else {
+        $scope.lineItems[product.id].quantity--;
+      }
     };
 
     $scope.logOut = function() {

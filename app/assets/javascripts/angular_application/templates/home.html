@@ -14,8 +14,8 @@
       <button ng-hide="product.inCart" ng-click="addToCart(product)">Add to cart</button>
 
       <div ng-show="product.inCart">
-        <button ng-click="removeItem(product.master)">remove</button>
-        <button ng-click="addItem(product.master)">add</button>
+        <button ng-click="removeQuantity(product)">remove</button>
+        <button ng-click="addQuantity(product.id)">add</button>
       </div>
     </div>
   </div>

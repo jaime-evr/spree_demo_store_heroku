@@ -82,7 +82,7 @@ App.controller('HomeCtrl', ['$scope', '$window', '$location', 'Checkout', 'Produ
 
     var todayDate = function() {
       var date  = new Date();
-      var day   = date.getDate();
+      var day   = ("0" + date.getDate()).slice(-2);
       var month = date.getMonth() + 1;
       var year  = date.getFullYear();
       return year + "-" + month + "-" + day;

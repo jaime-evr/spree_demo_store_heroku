@@ -60,7 +60,11 @@ App.controller('HomeCtrl', ['$scope', '$window', '$location', 'Checkout', 'Produ
     };
 
     $scope.addQuantity = function(id) {
-      if (confirm("Are you sure?")) {
+      if ($scope.lineItems[id].quantity == 2) {
+        if (confirm("Are you sure?")) {
+          $scope.lineItems[id].quantity++;
+        }
+      } else {
         $scope.lineItems[id].quantity++;
       }
     };

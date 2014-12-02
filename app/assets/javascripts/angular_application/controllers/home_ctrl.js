@@ -11,8 +11,8 @@ App.controller('HomeCtrl', ['$scope', '$window', '$location', 'Checkout', 'Produ
       var categoryProducts = [];
       var now = new Date().getHours();
 
-      if (now >= 7 && now <= 10) {
-        if (category.name == "Cafe" || category.name == "Desayuno") {
+      if (category.name == "Cafe" || category.name == "Desayuno") {
+        if (now < 7 || now > 10) {
           return category.isHidden = true;
         }
       }

@@ -1,10 +1,14 @@
-.l-pull-left {
-  margin-right: 80px
-}
-
 #login-form {
   text-align: center;
   margin: 20px 0;
+}
+
+#products-list {
+  margin-bottom: 60px;
+}
+
+.l-pull-left {
+  margin-right: 80px
 }
 
 .l-center {
@@ -17,7 +21,7 @@
   top: -98px;
 }
 
-.l-overlap-button {
+.l-overlap-btn {
   margin-bottom: -48px;
   position: relative;
   top: -68px;
@@ -30,3 +34,9 @@
   right: 15px;
   top: 75px;
 }
+
+.l-bottom-fixed {
+  position: fixed;
+  bottom: 0;
+}
+

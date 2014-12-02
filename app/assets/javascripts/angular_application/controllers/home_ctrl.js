@@ -26,7 +26,7 @@ App.controller('HomeCtrl', ['$scope', '$window', '$location', 'Checkout', 'Produ
       return categoryProducts;
     };
 
-    $scope.placeOrder = function() {
+    $scope.makeOrder = function() {
       var user = JSON.parse($window.sessionStorage.getItem('user'));
       var items = [];
 

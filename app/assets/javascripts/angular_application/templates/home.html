@@ -1,6 +1,6 @@
-<section id="header">
+<header>
   <button ng-click="logOut()">Log Out</button>
-</section>
+</heaader>
 
 <section id="products-list">
   <div ng-repeat="category in categories" ng-hide="category.isHidden" ng-init="categoryProducts=renderCategoryProducts(category)">
@@ -11,7 +11,7 @@
 
     <div class="product-box l-center" ng-repeat="product in categoryProducts">
       <div class="counter-box l-overlap-counter" ng-show="product.inCart">
-        <span class="count">{{lineItems[product.id].quantity}}</span>
+        <span class="items-count">{{lineItems[product.id].quantity}}</span>
         <span>Selected</span>
       </div>
       <img ng-src="{{product.master.images[0].product_url}}" />
@@ -20,16 +20,19 @@
         <h2>{{product.master.name}}</h2>
       </div>
 
-      <span class="product-button add-button l-overlap-button l-center" ng-hide="product.inCart" ng-click="addToCart(product)">+</span>
+      <span class="btn btn-product btn-add l-overlap-btn l-center" ng-hide="product.inCart" ng-click="addToCart(product)">+</span>
 
-      <div class="add-remove-controls l-overlap-button" ng-show="product.inCart">
-        <span class="product-button quantity-remove" ng-click="removeQuantity(product)">-</span>
-        <span class="product-button quantity-add" ng-click="addQuantity(product.id)">+</span>
+      <div class="add-remove-controls l-overlap-btn" ng-show="product.inCart">
+        <span class="btn btn-product quantity-remove" ng-click="removeQuantity(product)">-</span>
+        <span class="btn btn-product quantity-add" ng-click="addQuantity(product.id)">+</span>
       </div>
 
     </div>
   </div>
 </section>
 
-<button ng-click="placeOrder()">Place Order</button>
+<footer class="cart-controls l-bottom-fixed">
+  <span>Products</span>
+  <span class="btn btn-cart" ng-click="makeOrder()">Make Order</span>
+</footer>
 

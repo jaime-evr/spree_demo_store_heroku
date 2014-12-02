@@ -11,7 +11,7 @@ App.controller('HomeCtrl', ['$scope', '$window', '$location', 'Checkout', 'Produ
       var categoryProducts = [];
       var now = new Date().getHours();
 
-      if (now <= 7 && now >= 10) {
+      if (now >= 7 && now <= 10) {
         if (category.name == "Cafe" || category.name == "Desayuno") {
           return category.isHidden = true;
         }
@@ -61,7 +61,7 @@ App.controller('HomeCtrl', ['$scope', '$window', '$location', 'Checkout', 'Produ
 
     $scope.addQuantity = function(id) {
       if ($scope.lineItems[id].quantity == 1) {
-        if (confirm("Are you sure?")) {
+        if (confirm("Are you sure you want to add two items to your order?")) {
           $scope.lineItems[id].quantity++;
         }
       } else {

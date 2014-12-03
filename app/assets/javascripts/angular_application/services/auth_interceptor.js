@@ -5,6 +5,8 @@ App.factory('authInterceptor', ['$rootScope', '$window', '$location',
         if($window.sessionStorage.getItem('user')) {
           user = JSON.parse($window.sessionStorage.getItem('user'));
           config.headers['X-Spree-Token'] = user.spree_api_key
+        } else {
+          $location.path('login');
         }
         return config;
       },

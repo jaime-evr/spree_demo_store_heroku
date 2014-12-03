@@ -12,7 +12,7 @@ App.controller('HomeCtrl', ['$scope', '$window', '$location', 'Checkout', 'Produ
       var now = new Date().getHours();
 
       if (category.name == "Cafe" || category.name == "Desayuno") {
-        if (now < 7 || now > 10) {
+        if (now < 7 || now > 9) {
           return category.isHidden = true;
         }
       }

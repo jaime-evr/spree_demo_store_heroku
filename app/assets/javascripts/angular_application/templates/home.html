@@ -1,6 +1,19 @@
-<header>
-  <button ng-click="logOut()">Log Out</button>
-</heaader>
+<div ng-controller="testCtrl">
+  <form name="homeForm" ng-submit="testSubmit()">
+    <input type="text" name="test" ng-model="test"></input>
+
+    <div ng-form name="zipcodeForm">
+      <input type="text" name="zipcode" maxlength="5"
+        ng-pattern="/^[0-9]{5}$/"
+        ng-required="true"
+        ng-model="zipcode">
+      </input>
+      <button ng-click="createLocation()">enviar</button>
+    </div>
+
+    <button>submit test</button>
+  </form>
+</div>
 
 <section id="products-list">
   <div ng-repeat="category in categories" ng-hide="category.isHidden" ng-init="categoryProducts=renderCategoryProducts(category)">

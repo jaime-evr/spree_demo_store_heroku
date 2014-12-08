@@ -2,6 +2,16 @@ App.controller('HomeCtrl', ['$scope', '$window', '$location', 'Checkout', 'Produ
   function($scope, $window, $location, Checkout, Product) {
     $scope.lineItems = {};
 
+    $scope.createLocation = function() {
+      debugger;
+      console.log("home controller");
+    };
+
+    $scope.testSubmit = function() {
+      debugger;
+      console.log("testSubmit");
+    };
+
     Product.query(function(data) {
       $scope.categories = data.categories;
       $scope.products = data[todayDate()];
@@ -51,6 +61,7 @@ App.controller('HomeCtrl', ['$scope', '$window', '$location', 'Checkout', 'Produ
     }
 
     $scope.addToCart = function(product) {
+      debugger;
       $scope.lineItems[product.id] = {
         variant_id: product.master.id,
         quantity: 1,

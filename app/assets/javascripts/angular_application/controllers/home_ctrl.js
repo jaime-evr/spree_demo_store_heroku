@@ -1,6 +1,10 @@
-App.controller('HomeCtrl', ['$scope', '$window', '$location', 'Checkout', 'Product',
-  function($scope, $window, $location, Checkout, Product) {
-    $scope.lineItems = {};
+App.controller('HomeCtrl', ['$scope', '$window', '$location', 'Product', 'Cart',
+  function($scope, $window, $location, Product, Cart) {
+    $scope.lineItems = Cart.lineItems;
+
+    $scope.countInCart = function() {
+      return Object.keys($scope.lineItems).length;
+    };
 
     Product.query(function(data) {
       $scope.categories = data.categories;
@@ -20,34 +24,15 @@ App.controller('HomeCtrl', ['$scope', '$window', '$location', 'Checkout', 'Produ
       $scope.products.forEach(function(product) {
         if(product.taxon_ids.indexOf(category.id) > -1) {
           categoryProducts.push(product);
+          if ($scope.lineItems[product.id]) product.inCart = true
         }
       });
 
       return categoryProducts;
     };
 
-    $scope.makeOrder = function() {
-      var user = JSON.parse($window.sessionStorage.getItem('user'));
-      var items = [];
-
-      for(var key in $scope.lineItems) {
-        items.push($scope.lineItems[key]);
-      }
-
-      var checkout = new Checkout({
-        user_id: user.id,
-        order: {
-          line_items: items
-        }
-      });
-
-      checkout.$save(function(order) {
-        if(order.errors) {
-          console.log(order.errors);
-        } else {
-          $location.path('/orders');
-        }
-      });
+    $scope.goToCart = function() {
+      $location.path('/cart');
     }
 
     $scope.addToCart = function(product) {
@@ -55,6 +40,7 @@ App.controller('HomeCtrl', ['$scope', '$window', '$location', 'Checkout', 'Produ
         variant_id: product.master.id,
         quantity: 1,
         delivery_time: "10",
+        name: product.name
       }
       product.inCart = true;
     };

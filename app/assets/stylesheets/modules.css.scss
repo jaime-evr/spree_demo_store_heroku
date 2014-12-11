@@ -27,16 +27,16 @@
 }
 
 .btn-cart {
-  background-color: $orange;
-  color: $gray94;
+  background: #c36200 url(/assets/palomita.svg) no-repeat 148px 16px;
+  color: #eeeeee;
   display: inline-block;
   float: right;
   font-size: 23px;
-  font-weight: 300;
-  height:50px;
+  height: 50px;
   line-height: 48px;
   margin: 5px 10px 5px 0;
-  width: 180px;
+  padding-right: 20px;
+  width: 160px;
 }
 
 .category-header {
@@ -87,9 +87,11 @@
 }
 
 .product-box {
+  background-color: white;
   border-bottom: 3px solid $gray94;
   overflow: hidden;
-  width: 320px;
+  text-align: center;
+  width: 100%;
 }
 
 .google {
@@ -124,7 +126,7 @@
   background-color: $dark-orange;
   color: $gray94;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 300;
   height: 60px;
   line-height: 60px;
   text-align: center;

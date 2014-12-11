@@ -13,6 +13,9 @@ App.config(['$httpProvider', '$routeProvider',
     }).when('/orders', {
       templateUrl: 'angular_application/templates/orders.html',
       controller: 'OrdersCtrl'
+    }).when('/cart', {
+      templateUrl: 'angular_application/templates/cart.html',
+      controller: 'CartCtrl'
     }).otherwise({
       redirectTo: '/login'
     });

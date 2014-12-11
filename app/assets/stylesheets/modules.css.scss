@@ -59,6 +59,11 @@
   width: 160px;
 }
 
+.btn-cancel {
+  float: left;
+  margin-left: 10px;
+}
+
 .cart-controls {
   background-color: $dark-orange;
   color: $gray94;
@@ -116,8 +121,8 @@
 }
 
 .line-item {
-  height: 100px;
-  line-height: 100px;
+  height: 60px;
+  padding-top: 37px;
 
   .title {
     font-weight: 600;

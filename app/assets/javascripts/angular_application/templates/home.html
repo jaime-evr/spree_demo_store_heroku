@@ -1,6 +1,6 @@
 <header>
   <button ng-click="logOut()">Log Out</button>
-</heaader>
+</header>
 
 <section id="products-list" ng-init="">
   <div ng-repeat="category in categories" ng-hide="category.isHidden" ng-init="categoryProducts=renderCategoryProducts(category)">
@@ -33,6 +33,6 @@
 
 <footer class="cart-controls l-bottom-fixed">
   <span>{{countInCart()}} Products</span>
-  <span class="btn btn-cart" ng-click="goToCart()">Make Order</span>
+  <span class="btn btn-cart btn-place" ng-click="goToCart()">Make Order</span>
 </footer>
 

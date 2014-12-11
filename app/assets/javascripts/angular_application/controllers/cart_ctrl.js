@@ -26,6 +26,10 @@ App.controller('CartCtrl', ['$scope', '$location', '$window', 'Checkout', 'Cart'
         }
       });
     };
+
+    $scope.cancelCart = function() {
+      $location.path('/home');
+    };
   }
 ]);
 

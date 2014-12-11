@@ -1,11 +1,15 @@
-<div class="category-header">
-  <h1 class="category-title">Today</h1>
-</div>
+<section id="cart">
+  <div class="category-header">
+    <h1 class="category-title">Today</h1>
+  </div>
 
-<div class="product-box l-center">
-  <span>{{lineItems}}</span>
-</div>
+  <div ng-repeat="lineItem in lineItems" class="product-box line-item l-center">
+    <span class="title">{{lineItem.name}}</span>
+    <span class="quantity">{{lineItem.quantity}} Item</span>
+  </div>
 
-<a href="#/home">products</a>
-
-<button ng-click="placeOrder()">Place Order</button>
+  <footer class="cart-controls l-bottom-fixed">
+    <span class="btn btn-cart" ng-click="cancelCart()">Cancel</span>
+    <span class="btn btn-cart btn-place" ng-click="placeOrder()">Place Order</span>
+  </footer>
+</section>

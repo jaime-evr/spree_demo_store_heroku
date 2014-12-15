@@ -1,10 +1,14 @@
-<h2>My orders</h2>
-<div ng-repeat="order in orders">
-  {{order.number}}
-  <ul>
-    <li ng-repeat="item in order.line_items">
-      <span>{{item.variant.name}}</span>
-    </li>
-  </ul>
-</div>
+<section id="orders">
+  <div class="category-header">
+    <h1 class="category-title">NEW ORDERS</h1>
+  </div>
 
+  <div class="product-box order" ng-repeat="order in orders">
+    <span class="date">{{order.processed_at}}</span>
+    <ul class="items-list">
+      <li class="item" ng-repeat="item in order.line_items">
+        <span class="title">{{item.variant.name}}</span>
+      </li>
+    </ul>
+  </div>
+</section>

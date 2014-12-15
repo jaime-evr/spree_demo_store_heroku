@@ -10,7 +10,8 @@ end
 child(ship_address: :ship_address) do
   extends "spree/api/addresses/show"
 end
-node(:token)     { |order| order.guest_token }
-node(:channel)   { |order| order.user.try(:channel) }
-node(:image_url) { |order| order.user.try(:image_url) }
+node(:token)        { |order| order.guest_token }
+node(:channel)      { |order| order.user.try(:channel) }
+node(:image_url)    { |order| order.user.try(:image_url) }
+node(:processed_at) { |order| order.created_at.strftime("%A, %B %e, %Y")}
 

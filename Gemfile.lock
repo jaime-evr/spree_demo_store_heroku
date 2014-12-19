@@ -83,7 +83,7 @@ GIT
 
 GIT
   remote: https://github.com/ulices/spree_food_menu
-  revision: 2f219e7701ea59715586c5401379d81a6e172aa6
+  revision: 31b6c00e60c99aaabc7b99eb8022e88b4515f211
   branch: 2-3-stable
   specs:
     spree_food_menu (2.3.2)
@@ -91,7 +91,7 @@ GIT
 
 GIT
   remote: https://github.com/ulices/spree_mobile_endpoints
-  revision: 93f304e912412f95bd5cc65cf042f3e2e68b16ec
+  revision: 68135757e7a7a227af88f8192518c62071c3f63c
   branch: 2-3-stable
   specs:
     spree_mobile_endpoints (2.3.2)
@@ -160,7 +160,7 @@ GEM
       rails (>= 3.1, < 5.0)
     climate_control (0.0.3)
       activesupport (>= 3.0)
-    cocaine (0.5.4)
+    cocaine (0.5.5)
       climate_control (>= 0.0.3, < 1.0)
     coderay (1.1.0)
     coffee-rails (4.0.1)
@@ -170,7 +170,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
-    colorize (0.7.3)
+    colorize (0.7.5)
     database_cleaner (1.2.0)
     deface (1.0.1)
       colorize (>= 0.5.8)
@@ -249,7 +249,7 @@ GEM
     method_source (0.8.2)
     mime-types (1.25.1)
     mini_portile (0.6.1)
-    minitest (5.4.3)
+    minitest (5.5.0)
     monetize (1.0.0)
       money (~> 6.4.0)
     money (6.4.0)
@@ -262,12 +262,12 @@ GEM
     nokogiri (1.6.5)
       mini_portile (~> 0.6.0)
     orm_adapter (0.5.0)
-    paperclip (4.2.0)
+    paperclip (4.2.1)
       activemodel (>= 3.0.0)
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.3)
       mime-types
-    paranoia (2.0.3)
+    paranoia (2.0.4)
       activerecord (~> 4.0)
     pg (0.17.1)
     polyamorous (1.0.0)
@@ -309,7 +309,7 @@ GEM
       activesupport (= 4.1.5)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
-    rake (10.4.0)
+    rake (10.4.2)
     ransack (1.2.3)
       actionpack (>= 3.0)
       activerecord (>= 3.0)

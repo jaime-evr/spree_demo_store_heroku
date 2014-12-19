@@ -39,6 +39,7 @@ App.controller('HomeCtrl', ['$scope', '$window', '$location', 'Product', 'Cart',
       $scope.lineItems[product.id] = {
         variant_id: product.master.id,
         quantity: 1,
+        comment: 'test test test test test test test test',
         delivery_time: "10",
         name: product.name
       }

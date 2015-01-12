@@ -83,8 +83,8 @@ GIT
 
 GIT
   remote: https://github.com/ulices/spree_food_menu
-  revision: 31b6c00e60c99aaabc7b99eb8022e88b4515f211
-  branch: 2-3-stable
+  revision: 173c0546983eedbb355be9dc9314954095bb2a1a
+  branch: products-endpoint
   specs:
     spree_food_menu (2.3.2)
       spree_core (~> 2.3.2)

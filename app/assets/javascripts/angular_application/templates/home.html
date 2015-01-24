@@ -1,8 +1,4 @@
-<header>
-  <button ng-click="logOut()">Log Out</button>
-</header>
-
-<section id="products-list" ng-init="">
+<section id="products-list">
   <div ng-repeat="category in categories" ng-hide="category.isHidden" ng-init="categoryProducts=renderCategoryProducts(category)">
     <div class="category-header">
       <h1 class="category-title">{{category.name}}</h1>

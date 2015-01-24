@@ -64,6 +64,19 @@
   margin-left: 10px;
 }
 
+.btn-main-menu {
+  float: left;
+  margin-top: 8px;
+  width: 30px;
+
+  span {
+    border-top: 3px solid white;
+    display: block;
+    margin-bottom: 8px;
+    width: 20px;
+  }
+}
+
 .cart-controls {
   background-color: $dark-orange;
   color: $gray94;
@@ -118,6 +131,18 @@
   color: $dark-turquoise;
   font-size: 20px;
   margin-top: 40px;
+}
+
+.header-menu {
+  background-color: $dark-turquoise;
+  height: 45px;
+
+  h1 {
+    color: white;
+    font-size: 18px;
+    float: right;
+    margin: 10px;
+  }
 }
 
 .items-list {
@@ -176,5 +201,14 @@
   display: inline-block;
   width: 70px;
   margin-right: 10px;
+}
+
+.navigation-menu {
+  background-color: white;
+  height: 100%;
+  left: -70%;
+  position: absolute;
+  top: 0%;
+  width: 70%;
 }
 

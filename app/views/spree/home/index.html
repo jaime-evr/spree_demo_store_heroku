@@ -1,1 +1,16 @@
-<article ng-view></article>
+<div class="container">
+  <header class="header-menu" ng-if="signedIn">
+    <menu-button></menu-button>
+    <h1>The Crowd's Chef</h1>
+  </header>
+  <nav class="navigation-menu">
+    <ul>
+      <li>La carta</li>
+      <li>My Orders</li>
+      <li>Log out
+      <li><button ng-click="logOut()">Log Out</button></li>
+    </ul>
+  </nav>
+  <article id="main" ng-view></article>
+</div>
+

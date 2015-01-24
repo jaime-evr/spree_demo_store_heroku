@@ -1,11 +1,10 @@
 App.controller('AuthenticationsCtrl', ['$scope', '$routeParams', '$location', '$window', 'CreateUser', 'AuthenticateUser',
   function($scope, $routeParams, $location, $window, CreateUser, AuthenticateUser) {
-    $scope.signedIn = false;
+    $scope.$parent.signedIn = false;
 
     $scope.processAuthResponse = function(authResult) {
       $scope.$apply(function() {
         if(authResult['access_token']) {
-          $scope.signedIn = true;
           $scope.getUserInfo();
         } else if(authResult['error']) {
           $scope.signedIn = false;

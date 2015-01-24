@@ -1,6 +1,7 @@
-App.controller('HomeCtrl', ['$scope', '$window', '$location', 'Product', 'Cart',
-  function($scope, $window, $location, Product, Cart) {
+App.controller('HomeCtrl', ['$scope', '$location', 'Product', 'Cart',
+  function($scope, $location, Product, Cart) {
     $scope.lineItems = Cart.lineItems;
+    $scope.$parent.signedIn = true;
 
     $scope.countInCart = function() {
       return Object.keys($scope.lineItems).length;
@@ -63,12 +64,6 @@ App.controller('HomeCtrl', ['$scope', '$window', '$location', 'Product', 'Cart',
       } else {
         $scope.lineItems[product.id].quantity--;
       }
-    };
-
-    $scope.logOut = function() {
-      gapi.auth.signOut();
-      delete $window.sessionStorage.removeItem('user')
-      $location.path('/login');
     };
 
     var todayDate = function() {

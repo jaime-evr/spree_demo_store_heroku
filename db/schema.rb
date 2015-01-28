@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141104162139) do
+ActiveRecord::Schema.define(version: 20150128182715) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -180,6 +180,7 @@ ActiveRecord::Schema.define(version: 20141104162139) do
     t.decimal  "pre_tax_amount",       precision: 8,  scale: 2
     t.integer  "delivery_type"
     t.datetime "delivery_time"
+    t.text     "comment"
   end
 
   add_index "spree_line_items", ["delivery_time"], name: "index_spree_line_items_on_delivery_time", using: :btree
@@ -398,7 +399,7 @@ ActiveRecord::Schema.define(version: 20141104162139) do
   add_index "spree_product_properties", ["property_id"], name: "index_spree_product_properties_on_property_id", using: :btree
 
   create_table "spree_products", force: true do |t|
-    t.string   "name",                 default: "", null: false
+    t.string   "name",                 default: "",   null: false
     t.text     "description"
     t.datetime "available_on"
     t.datetime "deleted_at"
@@ -409,6 +410,7 @@ ActiveRecord::Schema.define(version: 20141104162139) do
     t.integer  "shipping_category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "available",            default: true
   end
 
   add_index "spree_products", ["available_on"], name: "index_spree_products_on_available_on", using: :btree

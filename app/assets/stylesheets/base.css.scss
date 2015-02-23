@@ -6,21 +6,29 @@ $turquoise: #5AABA2;
 $orange: #c36200;
 $dark-orange: #d86e27;
 
+html, body, #main, .container {
+  height: 100%
+}
+
 body {
-  background-color: $turquoise;
+  background-color: white;
   font-family: Lato;
   font-weight: 300;
   margin: 0;
   overflow-x: hidden;
 }
 
-h1, h2 {
+h1, h2, ul, li {
   margin: 0;
   padding: 0;
 }
 
 #cart, #products-list {
   background-color: white;
-  margin-bottom: 60px;
+  padding-bottom: 60px;
+}
+
+#products-list, #cart, #orders {
+  padding-top: 45px;
 }
 

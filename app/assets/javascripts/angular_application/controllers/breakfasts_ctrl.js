@@ -7,6 +7,10 @@ App.controller('BreakfastsCtrl', ['$scope', '$window', '$location',
       delete $window.sessionStorage.removeItem('user')
       $location.path('/login');
     };
+
+    $scope.goTo = function(path) {
+      $location.path(path)
+    }
   }
 ]);
 

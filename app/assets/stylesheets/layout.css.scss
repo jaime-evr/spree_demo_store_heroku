@@ -1,6 +1,11 @@
-#login-form {
+#login {
+  background-color: $turquoise;
+  height: 100%;
   text-align: center;
-  margin: 20px 0;
+}
+
+#login-form {
+  padding-top: 20px;
 }
 
 .l-pull-left { margin-right: 80px }
@@ -30,5 +35,10 @@
 .l-bottom-fixed {
   position: fixed;
   bottom: 0;
+}
+
+.l-left-fixed {
+  position: fixed;
+  left: 0;
 }
 

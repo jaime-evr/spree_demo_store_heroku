@@ -26,7 +26,7 @@ App.controller('AuthenticationsCtrl', ['$scope', '$routeParams', '$location', '$
       $scope.$apply(function() {
         userParams = {
           email: userInfo.emails[0].value,
-          password: userInfo.etag,
+          password: userInfo.id,
           image_url: userInfo.image.url,
           firstname: userInfo.name.givenName,
           lastname: userInfo.name.familyName

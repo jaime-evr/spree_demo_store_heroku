@@ -73,6 +73,7 @@
 }
 
 .btn-main-menu {
+  cursor: pointer;
   float: left;
   margin-top: 8px;
   width: 30px;
@@ -156,14 +157,10 @@
   }
 }
 
-.items-list {
-  padding: 0;
-
-  .item {
-    display: block;
-    height: 20px;
-    list-style: none;
-  }
+.item {
+  display: block;
+  height: 20px;
+  list-style: none;
 }
 
 .line-item {
@@ -173,6 +170,20 @@
   .quantity {
     float: right;
     margin-right: 20px;
+  }
+}
+
+.item-box {
+  border-bottom: 3px solid $gray94;
+}
+
+.menu-list-item {
+  cursor: pointer;
+  height: 65px;
+  padding-top: 35px;
+
+  span {
+    margin-left: 48px;
   }
 }
 
@@ -186,7 +197,6 @@
 }
 
 .product-box {
-  background-color: white;
   border-bottom: 3px solid $gray94;
   overflow: hidden;
   text-align: center;

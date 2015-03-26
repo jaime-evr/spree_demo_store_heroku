@@ -3,7 +3,7 @@ App.directive('menuButton', function() {
     restrict: 'E',
     replace: true,
     scope: {},
-    templateUrl: 'angular_application/templates/menu-button.html',
+    templateUrl: 'angular_application/templates/menu_button.html',
     link: function(scope, element, attrs) {
       var isNavOpen = false;
       var doc = $('html');

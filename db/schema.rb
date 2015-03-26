@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141104162139) do
+ActiveRecord::Schema.define(version: 20141219172121) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -180,6 +180,7 @@ ActiveRecord::Schema.define(version: 20141104162139) do
     t.decimal  "pre_tax_amount",       precision: 8,  scale: 2
     t.integer  "delivery_type"
     t.datetime "delivery_time"
+    t.text     "comment"
   end
 
   add_index "spree_line_items", ["delivery_time"], name: "index_spree_line_items_on_delivery_time", using: :btree
